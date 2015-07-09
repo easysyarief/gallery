@@ -1,0 +1,11 @@
+<h1>Index of Gallery Blog</h1>
+
+<div class="box_post">
+	<% @posts.each do |p| %>
+	<p>
+		<b> <%= p.title %> </b><br>
+		<%= p.body %><br>
+	</p>
+		
+	<% end %>
+</div>
