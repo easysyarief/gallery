@@ -38,6 +38,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
 
+gem 'devise'
+
 group :production do
 	gem 'rails_12factor'
 end

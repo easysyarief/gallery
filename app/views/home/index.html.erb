@@ -1,11 +1,36 @@
 <h1>Index of Gallery Blog</h1>
 
-<div class="box_post">
-	<% @posts.each do |p| %>
+
+<% @posts.each do |p| %>
 	<p>
 		<b> <%= p.title %> </b><br>
 		<%= p.body %><br>
-	</p>
 		
-	<% end %>
-</div>
+		<% p.comments.each do |c| %>
+			<%= c.email %> : <%= c.isi %> <br>
+		<% end %>
+
+		<form action="<%= komen_path(post_id: p.id) %>" method="POST">
+			<table>
+			<tr>
+				<td>
+					email
+				</td>
+				<td>
+					<input type="text" name="email">
+				</td>
+			</tr>
+			<br>
+			<tr>
+				<td>
+					
+				</td>
+				<td>
+					<textarea type="text" name="isi"> </textarea><br>
+				</td>
+			</tr>
+			</table>
+			<input type="submit">
+		</form>
+	</p>
+<% end %>
